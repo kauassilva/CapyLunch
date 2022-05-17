@@ -14,6 +14,6 @@ public class Teste {
         System.out.println("Capybara");
         System.out.println("Maria linda");
         System.out.println("A mensagem de cima é verdade!");
-        
+        System.out.println("Pedro sabe de tudo");
     }
 }
