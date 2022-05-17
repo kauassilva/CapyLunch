@@ -13,6 +13,7 @@ public class Teste {
     public static void main(String[] args) {
         System.out.println("Capybara");
         System.out.println("Maria linda");
-        System.out.println("A mensagem de cima é mentira!");
+        System.out.println("A mensagem de cima é verdade!");
+        
     }
 }
