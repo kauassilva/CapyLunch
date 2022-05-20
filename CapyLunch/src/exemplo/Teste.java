@@ -17,7 +17,7 @@ public class Teste {
         System.out.println("A mensagem de cima é verdade!");
         System.out.println("Pedro sabe de tudo");
         System.out.println("João lindo");
-        System.out.println("Kaua");
+        System.out.println("Kaua o mais lindo deles!");
         System.out.println(animal);
         System.out.println("Sofia linda");
     }
