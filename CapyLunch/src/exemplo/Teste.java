@@ -19,5 +19,6 @@ public class Teste {
         System.out.println("João lindo");
         System.out.println("Kaua");
         System.out.println(animal);
+        System.out.println("Sofia linda");
     }
 }
