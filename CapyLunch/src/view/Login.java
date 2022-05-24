@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author kauas
@@ -15,6 +19,18 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         setLocationRelativeTo(null); // abre a interface no meio da tela
+    }
+    
+    private void validaLogin() {
+        Login login = new Login();
+        if (id.getText().equals("2140") && String.valueOf(senha.getPassword()).equals("2305")) {
+            InterfaceGerente intGerente = new InterfaceGerente();
+            intGerente.setVisible(true); // aparecer segunda tela
+            this.dispose(); // fechar a tela atual
+        } else {
+            JOptionPane.showMessageDialog(null,"Código de Usuário e/ou senha inválido(s)","ERRO", JOptionPane.ERROR_MESSAGE);
+            id.grabFocus();
+        }
     }
     
     /**
@@ -59,10 +75,20 @@ public class Login extends javax.swing.JFrame {
                 idActionPerformed(evt);
             }
         });
+        id.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                idKeyPressed(evt);
+            }
+        });
 
         senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 senhaActionPerformed(evt);
+            }
+        });
+        senha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                senhaKeyPressed(evt);
             }
         });
 
@@ -71,6 +97,16 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("CAPYLUNCH");
 
         sair.setText("Sair");
+        sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sairActionPerformed(evt);
+            }
+        });
+        sair.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                sairKeyPressed(evt);
+            }
+        });
 
         acessar.setText("Acessar");
         acessar.addActionListener(new java.awt.event.ActionListener() {
@@ -158,13 +194,36 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_senhaActionPerformed
 
     private void acessarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_acessarKeyPressed
-        
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            validaLogin();
+        }
     }//GEN-LAST:event_acessarKeyPressed
 
     private void acessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acessarActionPerformed
-        //Funcionario func1 = new Funcionario(id.getText(), String.valueOf(senha.getPassword()));
-        //func1.validaLogin();
+        validaLogin();
     }//GEN-LAST:event_acessarActionPerformed
+
+    private void idKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            validaLogin();
+        }
+    }//GEN-LAST:event_idKeyPressed
+
+    private void senhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_senhaKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            validaLogin();
+        }
+    }//GEN-LAST:event_senhaKeyPressed
+
+    private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_sairActionPerformed
+
+    private void sairKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sairKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_sairKeyPressed
 
     /**
      * @param args the command line arguments

@@ -15,6 +15,7 @@ public class InterfaceGerente extends javax.swing.JFrame {
      */
     public InterfaceGerente() {
         initComponents();
+        setLocationRelativeTo(null); // abre a interface no meio da tela
     }
 
     /**
