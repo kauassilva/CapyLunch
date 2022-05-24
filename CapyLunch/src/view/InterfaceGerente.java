@@ -29,28 +29,33 @@ public class InterfaceGerente extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnGerenciarFuncionarios = new javax.swing.JButton();
+        btnGerenciarComidas = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Interface do Gerente");
 
-        jButton1.setText("Gerenciar Funcionários");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnGerenciarFuncionarios.setText("Gerenciar Funcionários");
+        btnGerenciarFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnGerenciarFuncionariosActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Gerenciar Comidas");
+        btnGerenciarComidas.setText("Gerenciar Comidas");
 
         jButton3.setText("Emitir Relatórios");
 
-        jButton4.setText("Encerrar");
+        btnSair.setText("Encerrar");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -62,12 +67,12 @@ public class InterfaceGerente extends javax.swing.JFrame {
                         .addGap(105, 105, 105)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnGerenciarFuncionarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnGerenciarComidas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(142, 142, 142)
-                        .addComponent(jButton4)))
+                        .addComponent(btnSair)))
                 .addContainerGap(110, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -76,13 +81,13 @@ public class InterfaceGerente extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnGerenciarFuncionarios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(btnGerenciarComidas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(btnSair)
                 .addContainerGap(70, Short.MAX_VALUE))
         );
 
@@ -106,9 +111,17 @@ public class InterfaceGerente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnGerenciarFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenciarFuncionariosActionPerformed
+            GerenciarFuncionario gerenciarFuncionario = new GerenciarFuncionario();
+            gerenciarFuncionario.setVisible(true); // aparecer segunda tela
+            this.dispose();
+    }//GEN-LAST:event_btnGerenciarFuncionariosActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+            Login login = new Login();
+            login.setVisible(true); // aparecer segunda tela
+            this.dispose();
+    }//GEN-LAST:event_btnSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,10 +159,10 @@ public class InterfaceGerente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnGerenciarComidas;
+    private javax.swing.JButton btnGerenciarFuncionarios;
+    private javax.swing.JButton btnSair;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
