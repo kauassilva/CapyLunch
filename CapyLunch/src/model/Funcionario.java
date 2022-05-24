@@ -4,27 +4,30 @@
  */
 package model;
 
+import javax.swing.JOptionPane;
+import view.Login;
+
 
 public class Funcionario {
-    
-    private int id,nivel;
-    private String nome,datan,cpf,senha,cargo;
+    Login login = new Login();
+    private int id;
+    private String nome,dataNasc,cpf,senha,cargo;
     private float salario;
 
-    public Funcionario(int id, int nivel, String nome, String datan, String cpf, String senha, String cargo, float salario) {
+    // Construtor para o cadastro
+    public Funcionario(int id, String nome, String dataNasc, String cpf, String senha, String cargo, float salario) {
         this.id = id;
-        this.nivel = nivel;
         this.nome = nome;
-        this.datan = datan;
+        this.dataNasc = dataNasc;
         this.cpf = cpf;
         this.senha = senha;
         this.cargo = cargo;
         this.salario = salario;
     }
 
-    public Funcionario(int id, int nivel, String senha) {
+    // Construtor para o login
+    public Funcionario(int id, String senha) {
         this.id = id;
-        this.nivel = nivel;
         this.senha = senha;
     }
 
@@ -36,14 +39,6 @@ public class Funcionario {
         this.id = id;
     }
 
-    public int getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(int nivel) {
-        this.nivel = nivel;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -52,12 +47,12 @@ public class Funcionario {
         this.nome = nome;
     }
 
-    public String getDatan() {
-        return datan;
+    public String getDataNasc() {
+        return dataNasc;
     }
 
-    public void setDatan(String datan) {
-        this.datan = datan;
+    public void setDataNasc(String datan) {
+        this.dataNasc = dataNasc;
     }
 
     public String getCpf() {
@@ -92,7 +87,13 @@ public class Funcionario {
         this.salario = salario;
     }
     
-    
+    public void validaLogin() {
+        if (id==1952 && senha=="2305") {
+            System.out.println("Deu tudo certo campeão!");
+        } else {
+            JOptionPane.showMessageDialog(null,"Email e/ou senha inválido(s)","ERRO", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     
      
 }
