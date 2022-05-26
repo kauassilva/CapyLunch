@@ -6,7 +6,7 @@ package view;
 
 /**
  *
- * @author Aroldo
+ * @author Pedro
  */
 public class InterfaceGerente extends javax.swing.JFrame {
 
@@ -47,6 +47,11 @@ public class InterfaceGerente extends javax.swing.JFrame {
         });
 
         btnGerenciarComidas.setText("Gerenciar Comidas");
+        btnGerenciarComidas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGerenciarComidasActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Emitir Relatórios");
 
@@ -122,6 +127,13 @@ public class InterfaceGerente extends javax.swing.JFrame {
             login.setVisible(true); // aparecer segunda tela
             this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnGerenciarComidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenciarComidasActionPerformed
+        // TODO add your handling code here:
+        Alimentos alimentos = new Alimentos();
+        alimentos.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnGerenciarComidasActionPerformed
 
     /**
      * @param args the command line arguments
