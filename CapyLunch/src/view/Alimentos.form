@@ -114,9 +114,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtValor">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="R$"/>
-          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtValorActionPerformed"/>
           </Events>

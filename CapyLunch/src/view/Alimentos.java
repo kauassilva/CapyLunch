@@ -59,7 +59,6 @@ public class Alimentos extends javax.swing.JFrame {
 
         jLabel2.setText("Valor");
 
-        txtValor.setText("R$");
         txtValor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtValorActionPerformed(evt);
