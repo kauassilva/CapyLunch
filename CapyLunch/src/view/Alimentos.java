@@ -59,6 +59,7 @@ public class Alimentos extends javax.swing.JFrame {
 
         jLabel2.setText("Valor");
 
+        txtValor.setText("R$");
         txtValor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtValorActionPerformed(evt);
@@ -153,7 +154,7 @@ public class Alimentos extends javax.swing.JFrame {
         Comidas comida = new Comidas(alimento, valor);
         lista.add(comida);
         dlm.addElement(comida.getAlimento());
-        dlm.addElement(comida.getValor());
+        dlm.addElement("R$ "+comida.getValor());
         listAlimentos.setModel(dlm);
         txtAlimento.setText("");
         txtValor.setText("");
