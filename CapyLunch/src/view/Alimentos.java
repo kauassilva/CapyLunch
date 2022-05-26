@@ -75,7 +75,7 @@ public class Alimentos extends javax.swing.JFrame {
         jScrollPane1.setViewportView(listAlimentos);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setText("Gerenciar Alimentos");
+        jLabel3.setText("Gerenciar Alimentos Aqui");
 
         btnVoltar.setText("Voltar");
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +106,7 @@ public class Alimentos extends javax.swing.JFrame {
                             .addComponent(txtAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
+                        .addGap(86, 86, 86)
                         .addComponent(jLabel3)))
                 .addGap(59, 59, 59))
         );
