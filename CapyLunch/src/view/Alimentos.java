@@ -50,7 +50,6 @@ public class Alimentos extends javax.swing.JFrame {
 
         jLabel1.setText("Alimento");
 
-        txtAlimento.setText("\n");
         txtAlimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAlimentoActionPerformed(evt);
@@ -150,6 +149,11 @@ public class Alimentos extends javax.swing.JFrame {
         String alimento = txtAlimento.getText();
         String valor = txtValor.getText();
         
+        // Dados estáticos
+        /*Comidas comida1 = new Comidas("Arroz de capivara","10");
+        lista.add(comida1);
+        dlm.addElement(comida1.getAlimento());
+        dlm.addElement("R$ "+comida1.getValor());*/
         Comidas comida = new Comidas(alimento, valor);
         lista.add(comida);
         dlm.addElement(comida.getAlimento());

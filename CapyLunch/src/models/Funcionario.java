@@ -10,13 +10,16 @@ package models;
  */
 public class Funcionario {
     private int id;
-    private String nome,dataNascimento,cpf,senha,cargo;
     private float salario;
+    private String nome,dataNascimento,cpf,cargo;
+    private String senha;
+    private char sexo; 
 
-    public Funcionario(int id, String nome, String dataNascimento, String cpf, String senha, String cargo, float salario) {
+    public Funcionario(int id, String nome, String dataNascimento, char sexo, String cpf, String senha, String cargo, float salario) {
         this.id = id;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
+        this.sexo = sexo;
         this.cpf = cpf;
         this.senha = senha;
         this.cargo = cargo;
@@ -51,6 +54,14 @@ public class Funcionario {
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
+    
+    public char getSexo() {
+        return sexo;
+    }
+    
+    public void setSexo(char sexo) {
+        this.sexo = sexo;
+    }
 
     public String getCpf() {
         return cpf;
@@ -84,7 +95,16 @@ public class Funcionario {
         this.salario = salario;
     }
     
-    
+    public String imprimir() {
+        return "\nID: "+id
+                +"\nNOME: "+nome
+                +"\nDTNASCIMENTO: "+dataNascimento
+                +"\nSEXO: "+sexo
+                +"\nCPF: "+cpf
+                +"\nSENHA: "+senha
+                +"\nCARGO: "+cargo
+                +"\nSALARIO: "+salario;
+    }
     
     
 }
