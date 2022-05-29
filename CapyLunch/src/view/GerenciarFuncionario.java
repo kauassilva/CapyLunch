@@ -14,16 +14,17 @@ import models.Funcionario;
  * @author kauas
  */
 public class GerenciarFuncionario extends javax.swing.JFrame {
+
     ButtonGroup meuGrupo;
     public ArrayList<Funcionario> listaFuncionarios = new ArrayList<>();
-    
+
     public GerenciarFuncionario() {
         initComponents();
         setLocationRelativeTo(null);
         meuGrupo = new ButtonGroup();
         meuGrupo.add(rbMasculino);
         meuGrupo.add(rbFeminino);
-    }  
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -172,6 +173,11 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tbFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbFuncionarioMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tbFuncionario);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -185,30 +191,32 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGap(317, 317, 317))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(bntNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtId, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtNascimento, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addComponent(rbMasculino)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(btnCadastrar)
-                                        .addComponent(rbFeminino))
-                                    .addGap(4, 4, 4)))
-                            .addComponent(btnRetornar))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bntNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtId)
+                            .addComponent(txtNome)
+                            .addComponent(txtNascimento)
+                            .addComponent(btnCodigo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(rbMasculino)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(rbFeminino)
+                                .addGap(11, 11, 11))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnRetornar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnCadastrar)))
                         .addGap(67, 67, 67)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
                                 .addComponent(btnEditar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnDeletar))
+                                .addComponent(btnDeletar)
+                                .addGap(8, 8, 8))
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -268,13 +276,13 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(btnRetornar)
-                        .addComponent(btnCadastrar))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnEditar)
-                        .addComponent(btnDeletar)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnEditar)
+                            .addComponent(btnDeletar)))
+                    .addComponent(btnCadastrar))
                 .addGap(20, 20, 20)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45))
@@ -298,9 +306,35 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        /*if (listCadastradas.getSelectedValue()) {
+        // CLICK DO BOTÃO EDITAR
+        
+        int posicao = tbFuncionario.getSelectedRow();  
+        
+        listaFuncionarios.get(posicao).setId(Integer.parseInt(txtId.getText()));
+        listaFuncionarios.get(posicao).setNome(txtNome.getText());
+        listaFuncionarios.get(posicao).setDataNascimento(txtNascimento.getText());
+        //listaFuncionarios.get(posicao).setSexo(meuGrupo.getSelection());
+        listaFuncionarios.get(posicao).setCpf(txtCpf.getText());
+        listaFuncionarios.get(posicao).setSenha(pswSenha.getText());
+        listaFuncionarios.get(posicao).setCargo(txtCargo.getText());
+        listaFuncionarios.get(posicao).setSalario(Float.parseFloat(txtSalario.getText()));
+        
+        DefaultTableModel modelo = (DefaultTableModel) tbFuncionario.getModel();
+        modelo.setNumRows(0);
 
-        }*/
+        // Mostrar o funcionário cadastrado
+        for (Funcionario lf : listaFuncionarios) {
+            modelo.addRow(new Object[]{
+                lf.getId(),
+                lf.getNome(),
+                lf.getDataNascimento(),
+                lf.getSexo(),
+                lf.getCpf(),
+                lf.getSenha(),
+                lf.getCargo(),
+                lf.getSalario()
+            });
+        }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void pswSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswSenhaActionPerformed
@@ -312,10 +346,12 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_rbMasculinoActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        // CLICK DO BOTÃO CADASTRAR
+        
         int id = Integer.parseInt(txtId.getText());
         String nome = txtNome.getText();
         String dataNascimento = txtNascimento.getText();
-        char sexo='\n';
+        char sexo = '\n';
         if (rbMasculino.isSelected()) {
             sexo = 'M';
         }
@@ -328,14 +364,14 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
         float salario = Float.parseFloat(txtSalario.getText());
 
         Funcionario f = new Funcionario(id, nome, dataNascimento, sexo, cpf, senha, cargo, salario);
-        
+
         listaFuncionarios.add(f);
         DefaultTableModel modelo = (DefaultTableModel) tbFuncionario.getModel();
         modelo.setNumRows(0);
-        
+
         // Mostrar o funcionário cadastrado
-        for (Funcionario lf: listaFuncionarios) {
-            modelo.addRow(new Object[] {
+        for (Funcionario lf : listaFuncionarios) {
+            modelo.addRow(new Object[]{
                 lf.getId(),
                 lf.getNome(),
                 lf.getDataNascimento(),
@@ -357,6 +393,8 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnRetornarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornarActionPerformed
+        // CLICK DO BOTÃO RETORNAR
+        
         InterfaceGerente interfaceGerente = new InterfaceGerente();
         interfaceGerente.setVisible(true); // aparecer próxima tela
         this.dispose();
@@ -383,15 +421,17 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_rbFemininoActionPerformed
 
     private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
+        // CLICK DO BOTÃO DELETAR
+        
         int posicao = tbFuncionario.getSelectedRow();
         listaFuncionarios.remove(posicao);
-        
+
         DefaultTableModel modelo = (DefaultTableModel) tbFuncionario.getModel();
         modelo.setNumRows(0);
-        
+
         // Mostrar o funcionário cadastrado
-        for (Funcionario lf: listaFuncionarios) {
-            modelo.addRow(new Object[] {
+        for (Funcionario lf : listaFuncionarios) {
+            modelo.addRow(new Object[]{
                 lf.getId(),
                 lf.getNome(),
                 lf.getDataNascimento(),
@@ -403,6 +443,21 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
             });
         }
     }//GEN-LAST:event_btnDeletarActionPerformed
+
+    private void tbFuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbFuncionarioMouseClicked
+        // CLICK DA TABELA FUNCIONARIOS
+        
+        int posicao = tbFuncionario.getSelectedRow();
+        
+        txtId.setText(tbFuncionario.getValueAt(posicao, 0).toString());
+        txtNome.setText(tbFuncionario.getValueAt(posicao, 1).toString());
+        txtNascimento.setText(tbFuncionario.getValueAt(posicao, 2).toString());
+        //meuGrupo.setText(tbFuncionario.getValueAt(posicao, 3).toString());
+        txtCpf.setText(tbFuncionario.getValueAt(posicao, 4).toString());
+        pswSenha.setText(tbFuncionario.getValueAt(posicao, 5).toString());
+        txtCargo.setText(tbFuncionario.getValueAt(posicao, 6).toString());
+        txtSalario.setText(tbFuncionario.getValueAt(posicao, 7).toString());
+    }//GEN-LAST:event_tbFuncionarioMouseClicked
 
     /**
      * @param args the command line arguments
