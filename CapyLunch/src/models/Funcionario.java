@@ -93,18 +93,5 @@ public class Funcionario {
 
     public void setSalario(float salario) {
         this.salario = salario;
-    }
-    
-    public String imprimir() {
-        return "\nID: "+id
-                +"\nNOME: "+nome
-                +"\nDTNASCIMENTO: "+dataNascimento
-                +"\nSEXO: "+sexo
-                +"\nCPF: "+cpf
-                +"\nSENHA: "+senha
-                +"\nCARGO: "+cargo
-                +"\nSALARIO: "+salario;
-    }
-    
-    
+    }   
 }
