@@ -147,6 +147,11 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
         });
 
         btnDeletar.setText("Deletar");
+        btnDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletarActionPerformed(evt);
+            }
+        });
 
         tbFuncionario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -307,7 +312,6 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_rbMasculinoActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        // Variável para cada atributo
         int id = Integer.parseInt(txtId.getText());
         String nome = txtNome.getText();
         String dataNascimento = txtNascimento.getText();
@@ -323,14 +327,10 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
         String cargo = txtCargo.getText();
         float salario = Float.parseFloat(txtSalario.getText());
 
-        // Instanciei o funcionário
         Funcionario f = new Funcionario(id, nome, dataNascimento, sexo, cpf, senha, cargo, salario);
         
-        // Salvei o funcionário no ArryaList
         listaFuncionarios.add(f);
-        // Instanciei o modelo da tabela
         DefaultTableModel modelo = (DefaultTableModel) tbFuncionario.getModel();
-        // Defini que o modelo não terá nenhuma linha
         modelo.setNumRows(0);
         
         // Mostrar o funcionário cadastrado
@@ -381,6 +381,28 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
     private void rbFemininoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbFemininoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbFemininoActionPerformed
+
+    private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
+        int posicao = tbFuncionario.getSelectedRow();
+        listaFuncionarios.remove(posicao);
+        
+        DefaultTableModel modelo = (DefaultTableModel) tbFuncionario.getModel();
+        modelo.setNumRows(0);
+        
+        // Mostrar o funcionário cadastrado
+        for (Funcionario lf: listaFuncionarios) {
+            modelo.addRow(new Object[] {
+                lf.getId(),
+                lf.getNome(),
+                lf.getDataNascimento(),
+                lf.getSexo(),
+                lf.getCpf(),
+                lf.getSenha(),
+                lf.getCargo(),
+                lf.getSalario()
+            });
+        }
+    }//GEN-LAST:event_btnDeletarActionPerformed
 
     /**
      * @param args the command line arguments
