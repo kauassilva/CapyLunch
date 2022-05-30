@@ -104,6 +104,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Cancelar pedido"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarPedidoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnConfirmarPedido">
           <Properties>

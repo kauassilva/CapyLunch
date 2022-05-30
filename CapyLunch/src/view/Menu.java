@@ -6,7 +6,7 @@ package view;
 
 /**
  *
- * @author Aroldo
+ * @author Pedro
  */
 public class Menu extends javax.swing.JFrame {
 
@@ -15,6 +15,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -43,6 +44,11 @@ public class Menu extends javax.swing.JFrame {
         jLabel1.setText("MENU");
 
         btnCancelarPedido.setText("Cancelar pedido");
+        btnCancelarPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarPedidoActionPerformed(evt);
+            }
+        });
 
         btnConfirmarPedido.setText("Confirmar pedido");
 
@@ -92,6 +98,13 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCancelarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarPedidoActionPerformed
+        // TODO add your handling code here:
+        InterfaceDoAtendente interfaceDoAtendente = new InterfaceDoAtendente();
+        interfaceDoAtendente.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarPedidoActionPerformed
 
     /**
      * @param args the command line arguments

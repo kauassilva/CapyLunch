@@ -15,6 +15,7 @@ public class InterfaceDoAtendente extends javax.swing.JFrame {
      */
     public InterfaceDoAtendente() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -38,8 +39,18 @@ public class InterfaceDoAtendente extends javax.swing.JFrame {
         jLabel1.setText("Interface Do Atendente");
 
         btnComerAqui.setText("Comer Aqui");
+        btnComerAqui.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComerAquiActionPerformed(evt);
+            }
+        });
 
         bntLevar.setText("Levar");
+        bntLevar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntLevarActionPerformed(evt);
+            }
+        });
 
         btnEncerrar.setText("Encerrar");
         btnEncerrar.addActionListener(new java.awt.event.ActionListener() {
@@ -107,6 +118,20 @@ public class InterfaceDoAtendente extends javax.swing.JFrame {
             login.setVisible(true); // aparecer segunda tela
             this.dispose();
     }//GEN-LAST:event_btnEncerrarActionPerformed
+
+    private void btnComerAquiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComerAquiActionPerformed
+        // TODO add your handling code here:
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnComerAquiActionPerformed
+
+    private void bntLevarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntLevarActionPerformed
+        // TODO add your handling code here:
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_bntLevarActionPerformed
 
     /**
      * @param args the command line arguments

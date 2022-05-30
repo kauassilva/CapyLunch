@@ -27,10 +27,16 @@ public class Login extends javax.swing.JFrame {
             InterfaceGerente intGerente = new InterfaceGerente();
             intGerente.setVisible(true); // aparecer segunda tela
             this.dispose(); // fechar a tela atual
+        }else if(id.getText().equals("1234")&&String.valueOf(senha.getPassword()).equals("5678")){
+            InterfaceDoAtendente intAtendente = new InterfaceDoAtendente();
+            intAtendente.setVisible(true);
+            this.dispose();
+            
         } else {
             JOptionPane.showMessageDialog(null,"Código de Usuário e/ou senha inválido(s)","ERRO", JOptionPane.ERROR_MESSAGE);
             id.grabFocus();
         }
+        
     }
     
     /**
