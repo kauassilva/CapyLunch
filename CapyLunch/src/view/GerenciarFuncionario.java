@@ -335,6 +335,14 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
                 lf.getSalario()
             });
         }
+        
+        txtId.setText("");
+        txtNome.setText("");
+        txtNascimento.setText("");
+        txtCpf.setText("");
+        pswSenha.setText("");
+        txtCargo.setText("");
+        txtSalario.setText("");
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void pswSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswSenhaActionPerformed
@@ -442,6 +450,14 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
                 lf.getSalario()
             });
         }
+        
+        txtId.setText("");
+        txtNome.setText("");
+        txtNascimento.setText("");
+        txtCpf.setText("");
+        pswSenha.setText("");
+        txtCargo.setText("");
+        txtSalario.setText("");
     }//GEN-LAST:event_btnDeletarActionPerformed
 
     private void tbFuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbFuncionarioMouseClicked
