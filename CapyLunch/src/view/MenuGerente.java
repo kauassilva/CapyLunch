@@ -101,7 +101,7 @@ public class MenuGerente extends javax.swing.JFrame {
 
     private void btnCancelarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarPedidoActionPerformed
         // TODO add your handling code here:
-        InterfaceDoAtendente interfaceDoAtendente = new InterfaceDoAtendente();
+        InterfaceAtendente interfaceDoAtendente = new InterfaceAtendente();
         interfaceDoAtendente.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCancelarPedidoActionPerformed
