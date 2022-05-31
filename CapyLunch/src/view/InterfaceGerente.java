@@ -130,7 +130,7 @@ public class InterfaceGerente extends javax.swing.JFrame {
 
     private void btnGerenciarComidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenciarComidasActionPerformed
         // TODO add your handling code here:
-        Alimentos alimentos = new Alimentos();
+        GerenciarAlimentos alimentos = new GerenciarAlimentos();
         alimentos.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnGerenciarComidasActionPerformed

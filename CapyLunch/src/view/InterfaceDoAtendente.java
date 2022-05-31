@@ -121,14 +121,14 @@ public class InterfaceDoAtendente extends javax.swing.JFrame {
 
     private void btnComerAquiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComerAquiActionPerformed
         // TODO add your handling code here:
-        Menu menu = new Menu();
+        MenuGerente menu = new MenuGerente();
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnComerAquiActionPerformed
 
     private void bntLevarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntLevarActionPerformed
         // TODO add your handling code here:
-        Menu menu = new Menu();
+        MenuGerente menu = new MenuGerente();
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_bntLevarActionPerformed
