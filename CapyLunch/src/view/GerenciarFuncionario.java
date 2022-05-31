@@ -6,8 +6,10 @@ package view;
 
 import java.util.ArrayList;
 import javax.swing.ButtonGroup;
+import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 import models.Funcionario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -307,42 +309,66 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // CLICK DO BOTÃO EDITAR
+        // ao clicar em editar, ele vai pegar a posição dos dados na tabela, e setar o dado que estiver escrito no campo
         
-        int posicao = tbFuncionario.getSelectedRow();  
+        JFrame frame = new JFrame();
         
-        listaFuncionarios.get(posicao).setId(Integer.parseInt(txtId.getText()));
-        listaFuncionarios.get(posicao).setNome(txtNome.getText());
-        listaFuncionarios.get(posicao).setDataNascimento(txtNascimento.getText());
-        //listaFuncionarios.get(posicao).setSexo(meuGrupo.getSelection());
-        listaFuncionarios.get(posicao).setCpf(txtCpf.getText());
-        listaFuncionarios.get(posicao).setSenha(pswSenha.getText());
-        listaFuncionarios.get(posicao).setCargo(txtCargo.getText());
-        listaFuncionarios.get(posicao).setSalario(Float.parseFloat(txtSalario.getText()));
+        int resposta = JOptionPane.showConfirmDialog(frame, "você tem certeza de que quer editar os dados do(a) funcionário(a)?", "Confirmação", JOptionPane.YES_NO_OPTION);
         
-        DefaultTableModel modelo = (DefaultTableModel) tbFuncionario.getModel();
-        modelo.setNumRows(0);
+        if (resposta == JOptionPane.YES_OPTION) {
+            int posicao = tbFuncionario.getSelectedRow(); 
+        
+            listaFuncionarios.get(posicao).setId(Integer.parseInt(txtId.getText()));
+            listaFuncionarios.get(posicao).setNome(txtNome.getText());
+            listaFuncionarios.get(posicao).setDataNascimento(txtNascimento.getText());
+            // editar o valor do sexo
+            char sexo = '\n';
+            if (rbMasculino.isSelected()) {
+                listaFuncionarios.get(posicao).setSexo('M');
+            }
+            if (rbFeminino.isSelected()) {
+                listaFuncionarios.get(posicao).setSexo('F');
+            }
+            listaFuncionarios.get(posicao).setCpf(txtCpf.getText());
+            listaFuncionarios.get(posicao).setSenha(pswSenha.getText());
+            listaFuncionarios.get(posicao).setCargo(txtCargo.getText());
+            listaFuncionarios.get(posicao).setSalario(Float.parseFloat(txtSalario.getText()));
 
-        // Mostrar o funcionário cadastrado
-        for (Funcionario lf : listaFuncionarios) {
-            modelo.addRow(new Object[]{
-                lf.getId(),
-                lf.getNome(),
-                lf.getDataNascimento(),
-                lf.getSexo(),
-                lf.getCpf(),
-                lf.getSenha(),
-                lf.getCargo(),
-                lf.getSalario()
-            });
+            DefaultTableModel modelo = (DefaultTableModel) tbFuncionario.getModel();
+            modelo.setNumRows(0);
+
+            // Mostrar o funcionário cadastrado
+            for (Funcionario lf : listaFuncionarios) {
+                modelo.addRow(new Object[]{
+                    lf.getId(),
+                    lf.getNome(),
+                    lf.getDataNascimento(),
+                    lf.getSexo(),
+                    lf.getCpf(),
+                    lf.getSenha(),
+                    lf.getCargo(),
+                    lf.getSalario()
+                });
+            }
+
+            txtId.setText("");
+            txtNome.setText("");
+            txtNascimento.setText("");
+            meuGrupo.clearSelection();
+            txtCpf.setText("");
+            pswSenha.setText("");
+            txtCargo.setText("");
+            txtSalario.setText("");
+        } else {
+            txtId.setText("");
+            txtNome.setText("");
+            txtNascimento.setText("");
+            meuGrupo.clearSelection();
+            txtCpf.setText("");
+            pswSenha.setText("");
+            txtCargo.setText("");
+            txtSalario.setText("");
         }
-        
-        txtId.setText("");
-        txtNome.setText("");
-        txtNascimento.setText("");
-        txtCpf.setText("");
-        pswSenha.setText("");
-        txtCargo.setText("");
-        txtSalario.setText("");
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void pswSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswSenhaActionPerformed
@@ -356,48 +382,64 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         // CLICK DO BOTÃO CADASTRAR
         
-        int id = Integer.parseInt(txtId.getText());
-        String nome = txtNome.getText();
-        String dataNascimento = txtNascimento.getText();
-        char sexo = '\n';
-        if (rbMasculino.isSelected()) {
-            sexo = 'M';
-        }
-        if (rbFeminino.isSelected()) {
-            sexo = 'F';
-        }
-        String cpf = txtCpf.getText();
-        String senha = pswSenha.getText();
-        String cargo = txtCargo.getText();
-        float salario = Float.parseFloat(txtSalario.getText());
+        JFrame frame = new JFrame();
+        
+        int resposta = JOptionPane.showConfirmDialog(frame,"Você tem certeza de que quer cadastrar um funcionário(a)?", "Confirmação", JOptionPane.YES_NO_OPTION);
+        
+        if (resposta == JOptionPane.YES_OPTION) {
+            int id = Integer.parseInt(txtId.getText());
+            String nome = txtNome.getText();
+            String dataNascimento = txtNascimento.getText();
+            char sexo = '\n';
+            if (rbMasculino.isSelected()) {
+                sexo = 'M';
+            }
+            if (rbFeminino.isSelected()) {
+                sexo = 'F';
+            }
+            String cpf = txtCpf.getText();
+            String senha = pswSenha.getText();
+            String cargo = txtCargo.getText();
+            float salario = Float.parseFloat(txtSalario.getText());
 
-        Funcionario f = new Funcionario(id, nome, dataNascimento, sexo, cpf, senha, cargo, salario);
+            Funcionario f = new Funcionario(id, nome, dataNascimento, sexo, cpf, senha, cargo, salario);
 
-        listaFuncionarios.add(f);
-        DefaultTableModel modelo = (DefaultTableModel) tbFuncionario.getModel();
-        modelo.setNumRows(0);
+            listaFuncionarios.add(f);
+            DefaultTableModel modelo = (DefaultTableModel) tbFuncionario.getModel();
+            modelo.setNumRows(0);
 
-        // Mostrar o funcionário cadastrado
-        for (Funcionario lf : listaFuncionarios) {
-            modelo.addRow(new Object[]{
-                lf.getId(),
-                lf.getNome(),
-                lf.getDataNascimento(),
-                lf.getSexo(),
-                lf.getCpf(),
-                lf.getSenha(),
-                lf.getCargo(),
-                lf.getSalario()
-            });
-        }
+            // Mostrar o funcionário cadastrado
+            for (Funcionario lf : listaFuncionarios) {
+                modelo.addRow(new Object[]{
+                    lf.getId(),
+                    lf.getNome(),
+                    lf.getDataNascimento(),
+                    lf.getSexo(),
+                    lf.getCpf(),
+                    lf.getSenha(),
+                    lf.getCargo(),
+                    lf.getSalario()
+                });
+            }
 
-        txtId.setText("");
-        txtNome.setText("");
-        txtNascimento.setText("");
-        txtCpf.setText("");
-        pswSenha.setText("");
-        txtCargo.setText("");
-        txtSalario.setText("");
+            txtId.setText("");
+            txtNome.setText("");
+            txtNascimento.setText("");
+            meuGrupo.clearSelection();
+            txtCpf.setText("");
+            pswSenha.setText("");
+            txtCargo.setText("");
+            txtSalario.setText("");
+        } else {
+            txtId.setText("");
+            txtNome.setText("");
+            txtNascimento.setText("");
+            meuGrupo.clearSelection();
+            txtCpf.setText("");
+            pswSenha.setText("");
+            txtCargo.setText("");
+            txtSalario.setText("");
+        } 
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnRetornarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornarActionPerformed
@@ -431,50 +473,68 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
     private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
         // CLICK DO BOTÃO DELETAR
         
-        int posicao = tbFuncionario.getSelectedRow();
-        listaFuncionarios.remove(posicao);
+        JFrame frame = new JFrame();
+        
+        int resposta = JOptionPane.showConfirmDialog(frame, "Você tem certeza de que deseja deletar o(a) funcionário(a)?","Confirmação", JOptionPane.YES_NO_OPTION);
+        
+        if (resposta == JOptionPane.YES_OPTION) {
+            int posicao = tbFuncionario.getSelectedRow();
+            listaFuncionarios.remove(posicao);
 
-        DefaultTableModel modelo = (DefaultTableModel) tbFuncionario.getModel();
-        modelo.setNumRows(0);
+            DefaultTableModel modelo = (DefaultTableModel) tbFuncionario.getModel();
+            modelo.setNumRows(0);
 
-        // Mostrar o funcionário cadastrado
-        for (Funcionario lf : listaFuncionarios) {
-            modelo.addRow(new Object[]{
-                lf.getId(),
-                lf.getNome(),
-                lf.getDataNascimento(),
-                lf.getSexo(),
-                lf.getCpf(),
-                lf.getSenha(),
-                lf.getCargo(),
-                lf.getSalario()
-            });
+            // Mostrar o funcionário cadastrado
+            for (Funcionario lf : listaFuncionarios) {
+                modelo.addRow(new Object[]{
+                    lf.getId(),
+                    lf.getNome(),
+                    lf.getDataNascimento(),
+                    lf.getSexo(),
+                    lf.getCpf(),
+                    lf.getSenha(),
+                    lf.getCargo(),
+                    lf.getSalario()
+                });
+            }
+
+            txtId.setText("");
+            txtNome.setText("");
+            txtNascimento.setText("");
+            meuGrupo.clearSelection();
+            txtCpf.setText("");
+            pswSenha.setText("");
+            txtCargo.setText("");
+            txtSalario.setText("");
+        } else {
+            txtId.setText("");
+            txtNome.setText("");
+            txtNascimento.setText("");
+            meuGrupo.clearSelection();
+            txtCpf.setText("");
+            pswSenha.setText("");
+            txtCargo.setText("");
+            txtSalario.setText("");
         }
         
-        txtId.setText("");
-        txtNome.setText("");
-        txtNascimento.setText("");
-        txtCpf.setText("");
-        pswSenha.setText("");
-        txtCargo.setText("");
-        txtSalario.setText("");
+        
     }//GEN-LAST:event_btnDeletarActionPerformed
 
     private void tbFuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbFuncionarioMouseClicked
         // CLICK DA TABELA FUNCIONARIOS
-        
+        // Ao clicar em um funcionário, deverá setar nos campos de texto, os dados do funcionário selecionado
         int posicao = tbFuncionario.getSelectedRow();
+        boolean radio;
         
         txtId.setText(tbFuncionario.getValueAt(posicao, 0).toString());
         txtNome.setText(tbFuncionario.getValueAt(posicao, 1).toString());
         txtNascimento.setText(tbFuncionario.getValueAt(posicao, 2).toString());
-        //meuGrupo.setText(tbFuncionario.getValueAt(posicao, 3).toString());
         txtCpf.setText(tbFuncionario.getValueAt(posicao, 4).toString());
         pswSenha.setText(tbFuncionario.getValueAt(posicao, 5).toString());
         txtCargo.setText(tbFuncionario.getValueAt(posicao, 6).toString());
         txtSalario.setText(tbFuncionario.getValueAt(posicao, 7).toString());
     }//GEN-LAST:event_tbFuncionarioMouseClicked
-
+    
     /**
      * @param args the command line arguments
      */
