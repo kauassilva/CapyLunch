@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package view;
+package views;
 
 import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
-import models.Funcionario;
+import entities.Funcionario;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,9 +16,10 @@ import javax.swing.JOptionPane;
  * @author kauas
  */
 public class GerenciarFuncionario extends javax.swing.JFrame {
-
+    Funcionario mf = new Funcionario();
     ButtonGroup meuGrupo;
     public ArrayList<Funcionario> listaFuncionarios = new ArrayList<>();
+    
 
     public GerenciarFuncionario() {
         initComponents();
@@ -26,6 +27,31 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
         meuGrupo = new ButtonGroup();
         meuGrupo.add(rbMasculino);
         meuGrupo.add(rbFeminino);
+        hardCodeTabela();
+    }
+    
+    public void hardCodeTabela() {
+        Funcionario f1 = new Funcionario(2140,"Kauã","04/09/2006",'M',"12345678911","2305","Gerente",60620.22F);
+        Funcionario f2 = new Funcionario(1234,"Toiota","06/12/2014",'M',"12345678911","5678","Atendente",5506.06F);
+
+        listaFuncionarios.add(f1);
+        listaFuncionarios.add(f2);
+            
+        DefaultTableModel modelo = (DefaultTableModel) tbFuncionario.getModel();
+        modelo.setNumRows(0);
+        
+        for (Funcionario lf : listaFuncionarios) {
+            modelo.addRow(new Object[]{
+                lf.getId(),
+                lf.getNome(),
+                lf.getDataNascimento(),
+                lf.getSexo(),
+                lf.getCpf(),
+                lf.getSenha(),
+                lf.getCargo(),
+                lf.getSalario()
+            });
+        }
     }
 
     /**
@@ -401,7 +427,7 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
             String senha = pswSenha.getText();
             String cargo = txtCargo.getText();
             float salario = Float.parseFloat(txtSalario.getText());
-
+            
             Funcionario f = new Funcionario(id, nome, dataNascimento, sexo, cpf, senha, cargo, salario);
 
             listaFuncionarios.add(f);
@@ -524,7 +550,6 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
         // CLICK DA TABELA FUNCIONARIOS
         // Ao clicar em um funcionário, deverá setar nos campos de texto, os dados do funcionário selecionado
         int posicao = tbFuncionario.getSelectedRow();
-        boolean radio;
         
         txtId.setText(tbFuncionario.getValueAt(posicao, 0).toString());
         txtNome.setText(tbFuncionario.getValueAt(posicao, 1).toString());

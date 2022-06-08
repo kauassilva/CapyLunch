@@ -2,18 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package models;
+package entities;
+
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import views.GerenciarFuncionario;
 
 /**
  *
  * @author kauas
  */
 public class Funcionario {
+    
     private int id;
     private float salario;
     private String nome,dataNascimento,cpf,cargo;
     private String senha;
-    private char sexo; 
+    private char sexo;
 
     public Funcionario(int id, String nome, String dataNascimento, char sexo, String cpf, String senha, String cargo, float salario) {
         this.id = id;
@@ -26,10 +31,7 @@ public class Funcionario {
         this.salario = salario;
     }
 
-    public Funcionario(int id, String senha) {
-        this.id = id;
-        this.senha = senha;
-    }
+    public Funcionario() {}
 
     public int getId() {
         return id;
@@ -93,5 +95,6 @@ public class Funcionario {
 
     public void setSalario(float salario) {
         this.salario = salario;
-    }   
+    }
+    
 }
