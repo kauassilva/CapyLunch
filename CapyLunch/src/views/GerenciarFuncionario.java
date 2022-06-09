@@ -9,6 +9,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 import entities.Funcionario;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +20,7 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
     Funcionario mf = new Funcionario();
     ButtonGroup meuGrupo;
     public ArrayList<Funcionario> listaFuncionarios = new ArrayList<>();
+    DecimalFormat casas = new DecimalFormat("0.00");
     
 
     public GerenciarFuncionario() {
@@ -49,7 +51,7 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
                 lf.getCpf(),
                 lf.getSenha(),
                 lf.getCargo(),
-                lf.getSalario()
+                casas.format(lf.getSalario())
             });
         }
     }
@@ -373,7 +375,7 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
                     lf.getCpf(),
                     lf.getSenha(),
                     lf.getCargo(),
-                    lf.getSalario()
+                    casas.format(lf.getSalario())
                 });
             }
 
@@ -444,7 +446,7 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
                     lf.getCpf(),
                     lf.getSenha(),
                     lf.getCargo(),
-                    lf.getSalario()
+                    casas.format(lf.getSalario())
                 });
             }
 
@@ -520,7 +522,7 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
                     lf.getCpf(),
                     lf.getSenha(),
                     lf.getCargo(),
-                    lf.getSalario()
+                    casas.format(lf.getSalario())
                 });
             }
 

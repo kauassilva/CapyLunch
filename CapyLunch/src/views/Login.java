@@ -22,7 +22,6 @@ public class Login extends javax.swing.JFrame {
     }
     
     private void validaLogin() {
-        Login login = new Login();
         if (id.getText().equals("2140") && String.valueOf(senha.getPassword()).equals("2305")) {
             InterfaceGerente intGerente = new InterfaceGerente();
             intGerente.setVisible(true); // aparecer segunda tela
@@ -31,12 +30,10 @@ public class Login extends javax.swing.JFrame {
             InterfaceAtendente intAtendente = new InterfaceAtendente();
             intAtendente.setVisible(true);
             this.dispose();
-            
         } else {
             JOptionPane.showMessageDialog(null,"Código de Usuário e/ou senha inválido(s)","ERRO", JOptionPane.ERROR_MESSAGE);
             id.grabFocus();
-        }
-        
+        } 
     }
     
     /**

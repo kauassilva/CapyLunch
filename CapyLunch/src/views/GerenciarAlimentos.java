@@ -5,6 +5,7 @@ package views;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 import entities.Alimento;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -16,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class GerenciarAlimentos extends javax.swing.JFrame {
     ArrayList<Alimento>lista;
-   
+    DecimalFormat casas = new DecimalFormat("0.00");
     
     /**
      * Creates new form Alimentos
@@ -31,9 +32,17 @@ public class GerenciarAlimentos extends javax.swing.JFrame {
     public void hardCodeTabela() {
         Alimento a1 = new Alimento("Pastel de Capivara", 7);
         Alimento a2 = new Alimento("Bolinho de Capivara", 8.2F);
+        Alimento a3 = new Alimento("Refrigerante 600ml",5.4F);
+        Alimento a4 = new Alimento("Suco natural 800ml",7);
+        Alimento a5 = new Alimento("X-Capy",18.3F);
+        Alimento a6 = new Alimento("Porção de fritas", 8);
         
         lista.add(a1);
         lista.add(a2);
+        lista.add(a3);
+        lista.add(a4);
+        lista.add(a5);
+        lista.add(a6);
         
         DefaultTableModel modelo = (DefaultTableModel) tbAlimento.getModel();
         modelo.setNumRows(0);
@@ -41,7 +50,7 @@ public class GerenciarAlimentos extends javax.swing.JFrame {
         for (Alimento la: lista) {
             modelo.addRow(new Object[] {
                 la.getNome(),
-                la.getValor()
+                casas.format(la.getValor())
             });
         }
     }
@@ -195,8 +204,8 @@ public class GerenciarAlimentos extends javax.swing.JFrame {
                     .addComponent(btEditar)
                     .addComponent(btnSalvar))
                 .addGap(54, 54, 54)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -235,7 +244,7 @@ public class GerenciarAlimentos extends javax.swing.JFrame {
             for (Alimento la : lista) {
                 modelo.addRow(new Object[]{
                     la.getNome(),
-                    la.getValor()
+                    casas.format(la.getValor())
                 });
             }
 
@@ -279,7 +288,7 @@ public class GerenciarAlimentos extends javax.swing.JFrame {
             for (Alimento la : lista) {
                 modelo.addRow(new Object[] {
                    la.getNome(),
-                   la.getValor()
+                   casas.format(la.getValor())
                 });
             }
 
@@ -308,7 +317,7 @@ public class GerenciarAlimentos extends javax.swing.JFrame {
             for (Alimento la: lista) {
                 modelo.addRow(new Object[] {
                     la.getNome(),
-                    la.getValor()
+                    casas.format(la.getValor())
                 });
             }
 

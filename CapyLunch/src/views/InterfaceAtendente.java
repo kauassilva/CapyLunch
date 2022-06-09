@@ -32,11 +32,12 @@ public class InterfaceAtendente extends javax.swing.JFrame {
         btnComerAqui = new javax.swing.JButton();
         bntLevar = new javax.swing.JButton();
         btnEncerrar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("Interface Do Atendente");
+        jLabel1.setText("Interface do Atendente");
 
         btnComerAqui.setText("Comer Aqui");
         btnComerAqui.addActionListener(new java.awt.event.ActionListener() {
@@ -59,6 +60,8 @@ public class InterfaceAtendente extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("Qual o cliente prefere?");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -66,30 +69,35 @@ public class InterfaceAtendente extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
+                        .addGap(79, 79, 79)
                         .addComponent(btnComerAqui)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(bntLevar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addComponent(btnEncerrar)))
-                .addContainerGap(101, Short.MAX_VALUE))
+                        .addGap(145, 145, 145)
+                        .addComponent(btnEncerrar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(jLabel2)))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addGap(46, 46, 46)
                 .addComponent(jLabel1)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnComerAqui)
                     .addComponent(bntLevar))
-                .addGap(47, 47, 47)
+                .addGap(32, 32, 32)
                 .addComponent(btnEncerrar)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -121,14 +129,14 @@ public class InterfaceAtendente extends javax.swing.JFrame {
 
     private void btnComerAquiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComerAquiActionPerformed
         // TODO add your handling code here:
-        MenuGerente menu = new MenuGerente();
+        MenuPedido menu = new MenuPedido();
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnComerAquiActionPerformed
 
     private void bntLevarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntLevarActionPerformed
         // TODO add your handling code here:
-        MenuGerente menu = new MenuGerente();
+        MenuPedido menu = new MenuPedido();
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_bntLevarActionPerformed
@@ -174,6 +182,7 @@ public class InterfaceAtendente extends javax.swing.JFrame {
     private javax.swing.JButton btnComerAqui;
     private javax.swing.JButton btnEncerrar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
