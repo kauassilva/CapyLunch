@@ -4,18 +4,24 @@
  */
 package views;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author Pedro
  */
 public class MenuPedido extends javax.swing.JFrame {
-
+    DecimalFormat casas = new DecimalFormat("0.00");
+    
+    float precoFritas=0,precoSuco=0,precoRefri=0,precoBolo=0,precoXCapy=0,precoPastel=0;
+    int countFritas=0,countSuco=0,countRefri=0,countBolo=0,countXCapy=0,countPastel=0;
     /**
      * Creates new form Menu
      */
     public MenuPedido() {
         initComponents();
         setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -32,18 +38,18 @@ public class MenuPedido extends javax.swing.JFrame {
         btnCancelarPedido = new javax.swing.JButton();
         btnConfirmarPedido = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jSpinner1 = new javax.swing.JSpinner();
-        jSpinner2 = new javax.swing.JSpinner();
-        jSpinner3 = new javax.swing.JSpinner();
-        jSpinner4 = new javax.swing.JSpinner();
-        jSpinner5 = new javax.swing.JSpinner();
-        jSpinner6 = new javax.swing.JSpinner();
+        cbPastel = new javax.swing.JCheckBox();
+        cbBolo = new javax.swing.JCheckBox();
+        cbRefri = new javax.swing.JCheckBox();
+        cbSuco = new javax.swing.JCheckBox();
+        cbXCapy = new javax.swing.JCheckBox();
+        cbFritas = new javax.swing.JCheckBox();
+        spPastel = new javax.swing.JSpinner();
+        spBolo = new javax.swing.JSpinner();
+        spRefri = new javax.swing.JSpinner();
+        spSuco = new javax.swing.JSpinner();
+        spXCapy = new javax.swing.JSpinner();
+        spFritas = new javax.swing.JSpinner();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -64,28 +70,53 @@ public class MenuPedido extends javax.swing.JFrame {
         });
 
         btnConfirmarPedido.setText("Confirmar pedido");
-
-        jCheckBox1.setText("\nPastel de Capivara\n");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        btnConfirmarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                btnConfirmarPedidoActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setText("\nBolinho de Capivara");
-
-        jCheckBox3.setText("Refrigerante 600ml");
-
-        jCheckBox4.setText("Suco natural 800ml");
-
-        jCheckBox5.setText("\nX-Capy");
-        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+        cbPastel.setText("\nPastel de Capivara\n");
+        cbPastel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox5ActionPerformed(evt);
+                cbPastelActionPerformed(evt);
             }
         });
 
-        jCheckBox6.setText("Porção de fritas");
+        cbBolo.setText("\nBolinho de Capivara");
+        cbBolo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbBoloActionPerformed(evt);
+            }
+        });
+
+        cbRefri.setText("Refrigerante 600ml");
+        cbRefri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbRefriActionPerformed(evt);
+            }
+        });
+
+        cbSuco.setText("Suco natural 800ml");
+        cbSuco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbSucoActionPerformed(evt);
+            }
+        });
+
+        cbXCapy.setText("\nX-Capy");
+        cbXCapy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbXCapyActionPerformed(evt);
+            }
+        });
+
+        cbFritas.setText("Porção de fritas");
+        cbFritas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbFritasActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("R$ 7,00");
 
@@ -107,41 +138,41 @@ public class MenuPedido extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jCheckBox6)
+                        .addComponent(cbFritas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSpinner6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(spFritas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jCheckBox1)
+                        .addComponent(cbPastel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(spPastel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jCheckBox5)
+                        .addComponent(cbXCapy)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(spXCapy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jCheckBox4)
+                        .addComponent(cbSuco)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(spSuco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jCheckBox3)
+                        .addComponent(cbRefri)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(spRefri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jCheckBox2)
+                        .addComponent(cbBolo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(spBolo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -149,33 +180,33 @@ public class MenuPedido extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbPastel)
+                    .addComponent(spPastel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbBolo)
+                    .addComponent(spBolo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbRefri)
+                    .addComponent(spRefri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbSuco)
+                    .addComponent(spSuco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbXCapy)
+                    .addComponent(spXCapy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox6)
-                    .addComponent(jSpinner6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbFritas)
+                    .addComponent(spFritas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -234,13 +265,84 @@ public class MenuPedido extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnCancelarPedidoActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    private void cbPastelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPastelActionPerformed
+        if (cbPastel.isSelected()) {
+            spPastel.setValue(1);
+            precoPastel = 7;
+            
+            
+        } else {
+            spPastel.setValue(0);
+            precoPastel = 0;
+            countPastel = 0;
+        }
+    }//GEN-LAST:event_cbPastelActionPerformed
 
-    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5ActionPerformed
+    private void cbXCapyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbXCapyActionPerformed
+        if (cbXCapy.isSelected()) {
+            spXCapy.setValue(1);
+            precoXCapy = 18.3F;
+        } else {
+            spXCapy.setValue(0);
+            precoXCapy = 0;
+        }
+    }//GEN-LAST:event_cbXCapyActionPerformed
+
+    private void cbBoloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbBoloActionPerformed
+        if (cbBolo.isSelected()) {
+            spBolo.setValue(1);
+            precoBolo = 8.2F;
+        } else {
+            spBolo.setValue(0);
+            precoBolo = 0;
+        }
+    }//GEN-LAST:event_cbBoloActionPerformed
+
+    private void cbRefriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbRefriActionPerformed
+        if (cbRefri.isSelected()) {
+            spRefri.setValue(1);
+            precoRefri = 5.4F;
+        } else {
+            spRefri.setValue(0);
+            precoRefri = 0;
+        }
+    }//GEN-LAST:event_cbRefriActionPerformed
+
+    private void cbSucoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSucoActionPerformed
+        if (cbSuco.isSelected()) {
+            spSuco.setValue(1);
+            precoSuco = 7;
+        } else {
+            spSuco.setValue(0);
+            precoSuco = 0;
+        }
+    }//GEN-LAST:event_cbSucoActionPerformed
+
+    private void cbFritasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFritasActionPerformed
+        if (cbFritas.isSelected()) {
+            spFritas.setValue(1);
+            precoFritas = 8;
+        } else {
+            spFritas.setValue(0);
+            precoFritas = 0;
+        }
+    }//GEN-LAST:event_cbFritasActionPerformed
+
+    private void btnConfirmarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarPedidoActionPerformed
+        countPastel = (int)spPastel.getValue();
+        countBolo = (int)spBolo.getValue();
+        countRefri = (int)spRefri.getValue();
+        countSuco = (int)spSuco.getValue();
+        countXCapy = (int)spXCapy.getValue();
+        countFritas = (int)spFritas.getValue();
+        
+        float precoFinal = (precoPastel*countPastel)+(precoBolo*countBolo)+(precoRefri*countRefri)+(precoSuco*countSuco)+(precoXCapy*countXCapy)+(precoFritas*countFritas);
+        System.out.println(casas.format(precoFinal));
+        
+        InterfacePedido pedido = new InterfacePedido(precoFinal);
+        pedido.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnConfirmarPedidoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -283,12 +385,12 @@ public class MenuPedido extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarPedido;
     private javax.swing.JButton btnConfirmarPedido;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JCheckBox cbBolo;
+    private javax.swing.JCheckBox cbFritas;
+    private javax.swing.JCheckBox cbPastel;
+    private javax.swing.JCheckBox cbRefri;
+    private javax.swing.JCheckBox cbSuco;
+    private javax.swing.JCheckBox cbXCapy;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -298,11 +400,11 @@ public class MenuPedido extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JSpinner jSpinner3;
-    private javax.swing.JSpinner jSpinner4;
-    private javax.swing.JSpinner jSpinner5;
-    private javax.swing.JSpinner jSpinner6;
+    private javax.swing.JSpinner spBolo;
+    private javax.swing.JSpinner spFritas;
+    private javax.swing.JSpinner spPastel;
+    private javax.swing.JSpinner spRefri;
+    private javax.swing.JSpinner spSuco;
+    private javax.swing.JSpinner spXCapy;
     // End of variables declaration//GEN-END:variables
 }
