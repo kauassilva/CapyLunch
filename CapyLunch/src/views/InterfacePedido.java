@@ -4,6 +4,7 @@
  */
 package views;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 /**
@@ -12,6 +13,7 @@ import java.util.Random;
  */
 public class InterfacePedido extends javax.swing.JFrame {
     Random aleatorio = new Random();
+    DecimalFormat casas = new DecimalFormat("0.00");
     
     float prFinal=0;
     /**
@@ -28,7 +30,7 @@ public class InterfacePedido extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         numPedido.setText(String.valueOf(aleatorio.nextInt(200)));
         prFinal = precoFinal;
-        this.precoFinal.setText(String.valueOf(prFinal));
+        this.precoFinal.setText(String.valueOf(casas.format(prFinal)));
     }
 
     /**
