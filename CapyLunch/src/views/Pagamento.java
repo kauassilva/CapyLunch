@@ -4,6 +4,8 @@
  */
 package views;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author maria
@@ -17,6 +19,8 @@ public class Pagamento extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -107,9 +111,16 @@ public class Pagamento extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Dinheiro dinheiro = new Dinheiro();
+        /*Dinheiro dinheiro = new Dinheiro();
         dinheiro.setVisible(true);
+        this.dispose();*/
+        
+        JOptionPane.showMessageDialog(null, "Efetue o Pagamento");
+        JOptionPane.showMessageDialog(null, "Pagamento confirmado!\n Aguarde o pedido");
+        InterfaceAtendente interfaceAtendente = new InterfaceAtendente();
+        interfaceAtendente.setVisible(true);
         this.dispose();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
