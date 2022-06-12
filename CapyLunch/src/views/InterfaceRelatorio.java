@@ -120,9 +120,9 @@ public class InterfaceRelatorio extends javax.swing.JFrame {
 
         jLabel3.setText("Lucro: R$");
 
-        lbGastos.setText("[valor]");
+        lbGastos.setText("     ");
 
-        lbLucro.setText("[valor]");
+        lbLucro.setText("     ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

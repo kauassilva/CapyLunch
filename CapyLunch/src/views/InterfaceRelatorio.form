@@ -256,12 +256,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lbGastos">
           <Properties>
-            <Property name="text" type="java.lang.String" value="[valor]"/>
+            <Property name="text" type="java.lang.String" value="     "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbLucro">
           <Properties>
-            <Property name="text" type="java.lang.String" value="[valor]"/>
+            <Property name="text" type="java.lang.String" value="     "/>
           </Properties>
         </Component>
       </SubComponents>
