@@ -6,6 +6,7 @@ package views;
 
 import entities.Alimento;
 import java.util.ArrayList;
+import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -27,18 +28,8 @@ public class InterfaceRelatorio extends javax.swing.JFrame {
         listaRelatorios.add(c3);
         listaRelatorios.add(c4);
         
-        DefaultTableModel modelo = (DefaultTableModel) tbRelatorio.getModel();
-        modelo.setNumRows(0);
         
-        for(Alimento lf : listaRelatorios){
-            modelo.addRow(new Object[]{
-                lf.getNome(),
-                lf.getValor(),  
-            });
-        
-    }
-        
-    }
+    }  
     
 
     /**
@@ -47,6 +38,8 @@ public class InterfaceRelatorio extends javax.swing.JFrame {
     public InterfaceRelatorio() {
         initComponents();
         setLocationRelativeTo(null);
+        hardCodeTabela();
+        
     }
 
     /**
@@ -73,6 +66,11 @@ public class InterfaceRelatorio extends javax.swing.JFrame {
         jLabel1.setText("Interface de Relatório");
 
         jButton1.setText("Emitir");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Retornar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -166,6 +164,20 @@ public class InterfaceRelatorio extends javax.swing.JFrame {
         interfaceGerente.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JFrame frame = new JFrame();
+        
+        DefaultTableModel modelo = (DefaultTableModel) tbRelatorio.getModel();
+        modelo.setNumRows(0);
+        
+        for(Alimento lf : listaRelatorios){
+            modelo.addRow(new Object[]{
+                lf.getNome(),
+                lf.getValor(),
+            });
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
