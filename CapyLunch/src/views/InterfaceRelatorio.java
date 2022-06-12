@@ -6,7 +6,7 @@ package views;
 
 /**
  *
- * @author junin
+ * @author joao cardoso
  */
 public class InterfaceRelatorio extends javax.swing.JFrame {
 
