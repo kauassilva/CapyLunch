@@ -104,7 +104,7 @@ public class MenuPedido extends javax.swing.JFrame {
             }
         });
 
-        cbXCapy.setText("\nX-Capy");
+        cbXCapy.setText(" X-Capy");
         cbXCapy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbXCapyActionPerformed(evt);

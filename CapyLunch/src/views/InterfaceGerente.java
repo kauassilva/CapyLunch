@@ -54,6 +54,11 @@ public class InterfaceGerente extends javax.swing.JFrame {
         });
 
         jButton3.setText("Emitir Relatórios");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         btnSair.setText("Encerrar");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -134,6 +139,12 @@ public class InterfaceGerente extends javax.swing.JFrame {
         alimentos.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnGerenciarComidasActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        InterfaceRelatorio interfaceRelatorio = new InterfaceRelatorio();
+        interfaceRelatorio.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
