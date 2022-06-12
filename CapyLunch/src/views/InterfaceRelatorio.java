@@ -5,8 +5,11 @@
 package views;
 
 import entities.Alimento;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -16,19 +19,23 @@ import javax.swing.table.DefaultTableModel;
 public class InterfaceRelatorio extends javax.swing.JFrame {
     
     public ArrayList<Alimento>listaRelatorios = new ArrayList<>();
+    Random aleatorio = new Random();
+    DecimalFormat casas = new DecimalFormat("0.00");
+    
+    float vlrTotal=0,lucro=0,gasto=0;
+    String dtIncSelecionada="",dtFnSelecionada="";
     
     public void hardCodeTabela(){
+        
         Alimento c1 = new Alimento ("Pastel de Capivara", 595);
         Alimento c2 = new Alimento ("Bolinho de Capivara", 410);
-        Alimento c3 = new Alimento ("X-Capy", 457);
+        Alimento c3 = new Alimento ("X-Capy", 457.5F);
         Alimento c4 = new Alimento ("Porção de fritas", 880);
         
-        listaRelatorios.add(c1);
-        listaRelatorios.add(c2);
-        listaRelatorios.add(c3);
         listaRelatorios.add(c4);
-        
-        
+        listaRelatorios.add(c1);
+        listaRelatorios.add(c3);
+        listaRelatorios.add(c2);
     }  
     
 
@@ -53,29 +60,33 @@ public class InterfaceRelatorio extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnEmitir = new javax.swing.JButton();
+        btnRetornar = new javax.swing.JButton();
         cboxInitDate = new javax.swing.JComboBox<>();
         cboxFinalDate = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tbRelatorio = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbEstatistica1 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lbGastos = new javax.swing.JLabel();
+        lbLucro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Interface de Relatório");
 
-        jButton1.setText("Emitir");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnEmitir.setText("Emitir");
+        btnEmitir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnEmitirActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Retornar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnRetornar.setText("Retornar");
+        btnRetornar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnRetornarActionPerformed(evt);
             }
         });
 
@@ -84,7 +95,7 @@ public class InterfaceRelatorio extends javax.swing.JFrame {
 
         cboxFinalDate.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Data Final", "01/06/2022", "02/06/2022", "03/06/2022", "04/06/2022", "05/06/2022", "06/06/2022", "07/06/2022", "08/06/2022", "09/06/2022", "10/06/2022", "11/06/2022", "12/06/2022", "13/06/2022", "14/06/2022" }));
 
-        tbRelatorio.setModel(new javax.swing.table.DefaultTableModel(
+        tbEstatistica1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -92,7 +103,7 @@ public class InterfaceRelatorio extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Produto mais vendido", "Valor total"
+                "Produtos mais vendidos", "Valor total"
             }
         ) {
             Class[] types = new Class [] {
@@ -103,26 +114,53 @@ public class InterfaceRelatorio extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tbRelatorio);
+        jScrollPane2.setViewportView(tbEstatistica1);
+
+        jLabel2.setText("Gastos: R$");
+
+        jLabel3.setText("Lucro: R$");
+
+        lbGastos.setText("[valor]");
+
+        lbLucro.setText("[valor]");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(cboxInitDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(cboxFinalDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jButton2)
-                .addGap(79, 79, 79)
-                .addComponent(jButton1))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(btnRetornar)
+                        .addGap(79, 79, 79)
+                        .addComponent(btnEmitir))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(cboxInitDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(cboxFinalDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbGastos))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbLucro)))))
+                .addGap(90, 90, 90))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,13 +171,24 @@ public class InterfaceRelatorio extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cboxInitDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cboxFinalDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addContainerGap(42, Short.MAX_VALUE))
+                    .addComponent(jLabel2)
+                    .addComponent(lbGastos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(lbLucro))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRetornar)
+                    .addComponent(btnEmitir))
+                .addGap(27, 27, 27))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(114, 114, 114)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(123, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -153,31 +202,48 @@ public class InterfaceRelatorio extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnRetornarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornarActionPerformed
         InterfaceGerente interfaceGerente = new InterfaceGerente();
         interfaceGerente.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnRetornarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnEmitirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmitirActionPerformed
         JFrame frame = new JFrame();
         
-        DefaultTableModel modelo = (DefaultTableModel) tbRelatorio.getModel();
-        modelo.setNumRows(0);
+        dtIncSelecionada = cboxInitDate.getSelectedItem().toString();
+        dtFnSelecionada = cboxFinalDate.getSelectedItem().toString();
         
-        for(Alimento lf : listaRelatorios){
-            modelo.addRow(new Object[]{
-                lf.getNome(),
-                lf.getValor(),
-            });
+        if (dtIncSelecionada.equals("Data Inicial") || dtFnSelecionada.equals("Data Final")) {
+            JOptionPane.showMessageDialog(null,"Selecione uma data para ínicio e fim","ERRO", JOptionPane.ERROR_MESSAGE);
+        } else {
+            DefaultTableModel modelo = (DefaultTableModel) tbEstatistica1.getModel();
+            modelo.setNumRows(0);
+
+            for(Alimento lr : listaRelatorios){
+                modelo.addRow(new Object[]{
+                    lr.getNome(),
+                    casas.format(lr.getValor()),
+                });
+
+                vlrTotal = vlrTotal + lr.getValor();
+            }
+
+            gasto = vlrTotal - (vlrTotal*0.7F);
+            lucro = vlrTotal - gasto;
+
+            lbLucro.setText(String.valueOf(casas.format(lucro)));
+            lbGastos.setText(String.valueOf(casas.format(gasto)));
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnEmitirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,13 +281,17 @@ public class InterfaceRelatorio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEmitir;
+    private javax.swing.JButton btnRetornar;
     private javax.swing.JComboBox<String> cboxFinalDate;
     private javax.swing.JComboBox<String> cboxInitDate;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tbRelatorio;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lbGastos;
+    private javax.swing.JLabel lbLucro;
+    private javax.swing.JTable tbEstatistica1;
     // End of variables declaration//GEN-END:variables
 }
