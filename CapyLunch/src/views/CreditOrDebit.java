@@ -91,10 +91,6 @@ public class CreditOrDebit extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDebitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDebitActionPerformed
-        /*Inserir inserir = new Inserir();
-        inserir.setVisible(true);
-        this.dispose();*/
-        
         JOptionPane.showMessageDialog(null, "Insira o Cartão");
         JOptionPane.showMessageDialog(null, "Pagamento confirmado!\n Aguarde o pedido");
         InterfaceAtendente interfaceAtendente = new InterfaceAtendente();
@@ -104,10 +100,6 @@ public class CreditOrDebit extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDebitActionPerformed
 
     private void btnCreditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreditActionPerformed
-        /*Inserir inserir = new Inserir();
-        inserir.setVisible(true);
-        this.dispose();*/
-        
         JOptionPane.showMessageDialog(null, "Insira o Cartão");
         JOptionPane.showMessageDialog(null, "Pagamento confirmado!\n Aguarde o pedido");
         InterfaceAtendente interfaceAtendente = new InterfaceAtendente();
