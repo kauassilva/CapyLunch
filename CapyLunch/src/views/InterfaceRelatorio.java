@@ -24,6 +24,7 @@ public class InterfaceRelatorio extends javax.swing.JFrame {
     
     float vlrTotal=0,lucro=0,gasto=0;
     String dtIncSelecionada="",dtFnSelecionada="";
+    String dtIncCortada="",dtFnCortada="";
     
     public void hardCodeTabela(){
         
@@ -217,13 +218,18 @@ public class InterfaceRelatorio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRetornarActionPerformed
 
     private void btnEmitirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmitirActionPerformed
-        JFrame frame = new JFrame();
-        
         dtIncSelecionada = cboxInitDate.getSelectedItem().toString();
         dtFnSelecionada = cboxFinalDate.getSelectedItem().toString();
         
+        dtIncCortada = dtIncSelecionada.substring(0,2);
+        dtFnCortada = dtFnSelecionada.substring(0,2);
+        
         if (dtIncSelecionada.equals("Data Inicial") || dtFnSelecionada.equals("Data Final")) {
             JOptionPane.showMessageDialog(null,"Selecione uma data para ínicio e fim","ERRO", JOptionPane.ERROR_MESSAGE);
+            
+        } else if (Integer.parseInt(dtFnCortada) < Integer.parseInt(dtIncCortada)) {
+            JOptionPane.showMessageDialog(null,"Selecione um período válido para emissão do relatório","ERRO", JOptionPane.ERROR_MESSAGE);
+        
         } else {
             DefaultTableModel modelo = (DefaultTableModel) tbEstatistica1.getModel();
             modelo.setNumRows(0);
