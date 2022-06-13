@@ -93,6 +93,8 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+
         btnCodigo.setText("Código:");
 
         txtId.addActionListener(new java.awt.event.ActionListener() {
