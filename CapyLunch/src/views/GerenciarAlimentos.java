@@ -50,7 +50,7 @@ public class GerenciarAlimentos extends javax.swing.JFrame {
         for (Alimento la: lista) {
             modelo.addRow(new Object[] {
                 la.getNome(),
-                casas.format(la.getValor())
+                la.getValor()
             });
         }
     }
@@ -255,7 +255,7 @@ public class GerenciarAlimentos extends javax.swing.JFrame {
             for (Alimento la : lista) {
                 modelo.addRow(new Object[]{
                     la.getNome(),
-                    casas.format(la.getValor())
+                    la.getValor()
                 });
             }
 
@@ -299,7 +299,7 @@ public class GerenciarAlimentos extends javax.swing.JFrame {
             for (Alimento la : lista) {
                 modelo.addRow(new Object[] {
                    la.getNome(),
-                   casas.format(la.getValor())
+                   la.getValor()
                 });
             }
 
@@ -328,7 +328,7 @@ public class GerenciarAlimentos extends javax.swing.JFrame {
             for (Alimento la: lista) {
                 modelo.addRow(new Object[] {
                     la.getNome(),
-                    casas.format(la.getValor())
+                    la.getValor()
                 });
             }
 

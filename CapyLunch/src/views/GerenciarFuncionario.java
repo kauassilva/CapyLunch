@@ -51,7 +51,7 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
                 lf.getCpf(),
                 lf.getSenha(),
                 lf.getCargo(),
-                casas.format(lf.getSalario())
+                lf.getSalario()
             });
         }
     }
@@ -377,7 +377,7 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
                     lf.getCpf(),
                     lf.getSenha(),
                     lf.getCargo(),
-                    casas.format(lf.getSalario())
+                    lf.getSalario()
                 });
             }
 
@@ -448,7 +448,7 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
                     lf.getCpf(),
                     lf.getSenha(),
                     lf.getCargo(),
-                    casas.format(lf.getSalario())
+                    lf.getSalario()
                 });
             }
 
@@ -524,7 +524,7 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
                     lf.getCpf(),
                     lf.getSenha(),
                     lf.getCargo(),
-                    casas.format(lf.getSalario())
+                    lf.getSalario()
                 });
             }
 
