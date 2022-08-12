@@ -8,7 +8,6 @@ import entities.Alimento;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Random;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 

@@ -4,10 +4,6 @@
  */
 package entities;
 
-import java.util.ArrayList;
-import javax.swing.table.DefaultTableModel;
-import views.GerenciarFuncionario;
-
 /**
  *
  * @author kauas
