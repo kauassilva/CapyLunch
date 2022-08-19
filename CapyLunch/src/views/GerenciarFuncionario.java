@@ -33,8 +33,8 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
     }
     
     public void hardCodeTabela() {
-        Funcionario f1 = new Funcionario(2140,"Kauã","04/09/2006",'M',"12345678911","2305","Gerente",60620.22F);
-        Funcionario f2 = new Funcionario(1234,"Toiota","06/12/2014",'M',"12345678911","5678","Atendente",5506.06F);
+        Funcionario f1 = new Funcionario(2140,"Kauã dos Santos","04/09/2006",'M',"12345678911","2305","Gerente",60620.22F);
+        Funcionario f2 = new Funcionario(1234,"Marta Lovelace","06/12/2014",'F',"11987654321","5678","Atendente",5506.06F);
 
         listaFuncionarios.add(f1);
         listaFuncionarios.add(f2);

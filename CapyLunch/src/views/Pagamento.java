@@ -126,7 +126,7 @@ public class Pagamento extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        CreditOrDebit creditOrDebit = new CreditOrDebit();
+        CreditoDebito creditOrDebit = new CreditoDebito();
         creditOrDebit.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed

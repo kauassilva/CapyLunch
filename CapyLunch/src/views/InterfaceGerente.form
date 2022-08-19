@@ -58,7 +58,7 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel1" max="32767" attributes="0"/>
                               <Component id="btnGerenciarFuncionarios" max="32767" attributes="0"/>
-                              <Component id="btnGerenciarComidas" max="32767" attributes="0"/>
+                              <Component id="btnGerenciarAlimentos" max="32767" attributes="0"/>
                               <Component id="jButton3" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -79,7 +79,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnGerenciarFuncionarios" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnGerenciarComidas" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnGerenciarAlimentos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -106,12 +106,12 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGerenciarFuncionariosActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnGerenciarComidas">
+        <Component class="javax.swing.JButton" name="btnGerenciarAlimentos">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Gerenciar Comidas"/>
+            <Property name="text" type="java.lang.String" value="Gerenciar Alimentos"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGerenciarComidasActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGerenciarAlimentosActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">

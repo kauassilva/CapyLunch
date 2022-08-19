@@ -30,7 +30,7 @@ public class InterfaceGerente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnGerenciarFuncionarios = new javax.swing.JButton();
-        btnGerenciarComidas = new javax.swing.JButton();
+        btnGerenciarAlimentos = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
 
@@ -48,10 +48,10 @@ public class InterfaceGerente extends javax.swing.JFrame {
             }
         });
 
-        btnGerenciarComidas.setText("Gerenciar Comidas");
-        btnGerenciarComidas.addActionListener(new java.awt.event.ActionListener() {
+        btnGerenciarAlimentos.setText("Gerenciar Alimentos");
+        btnGerenciarAlimentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGerenciarComidasActionPerformed(evt);
+                btnGerenciarAlimentosActionPerformed(evt);
             }
         });
 
@@ -80,7 +80,7 @@ public class InterfaceGerente extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnGerenciarFuncionarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnGerenciarComidas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnGerenciarAlimentos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(142, 142, 142)
@@ -95,7 +95,7 @@ public class InterfaceGerente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnGerenciarFuncionarios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGerenciarComidas)
+                .addComponent(btnGerenciarAlimentos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
@@ -135,12 +135,12 @@ public class InterfaceGerente extends javax.swing.JFrame {
             this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed
 
-    private void btnGerenciarComidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenciarComidasActionPerformed
+    private void btnGerenciarAlimentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenciarAlimentosActionPerformed
 
-        GerenciarAlimentos alimentos = new GerenciarAlimentos();
+        GerenciarAlimento alimentos = new GerenciarAlimento();
         alimentos.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnGerenciarComidasActionPerformed
+    }//GEN-LAST:event_btnGerenciarAlimentosActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         InterfaceRelatorio interfaceRelatorio = new InterfaceRelatorio();
@@ -184,7 +184,7 @@ public class InterfaceGerente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGerenciarComidas;
+    private javax.swing.JButton btnGerenciarAlimentos;
     private javax.swing.JButton btnGerenciarFuncionarios;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton jButton3;
