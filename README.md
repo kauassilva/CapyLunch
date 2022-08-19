@@ -3,6 +3,7 @@
 That is the final project of the A3 of Programming of Computational Solutions of the Computer Science Course, at UAM - Universidade Anhembi Morumbi.
 
 
+
 ## ❓ A3 Project Specifications
 
 * The system must be a desktop solution with a graphical interface;
@@ -21,15 +22,19 @@ That is the final project of the A3 of Programming of Computational Solutions of
 * The group is free to add new features inherent to the selected theme.
 
 
+
 ## 💻 Technologies
 
 * JDK version 17.0.2
 * Java with Ant
 
 
+
 ## 🌐 Services
 
 * Github
+
+
 
 ## ❗ Observations
 
@@ -37,22 +42,51 @@ This project hasn't a database, for functions like CRUD we used ArrayLists.
 
 We use JOptionPane to make error alerts when some information is wrong, such as in the login interface, and confirmation messages, such as when you will perform the register, edit and delete function.
 
+
+
 ## ✍️ How to use
 
-* 1 - When you start the system, will appears the **login interface**.
+### 1 - When you start the system, will appears the **login interface**.
 
-* 1.1 - If you type "2140" in the **Código de Usuário field** and "2305" in the **Senha field** and press the **Acessar button** or the **Enter key**, will appear the **Interface do Gerente** with some functions.
+![login image](https://github.com/kauassilva/CapyLunch/blob/main/CapyLunch/src/assets/readme/interfaceLogin.png)
 
-* 1.1.1 - In the **Gerenciar Funcionários interface**, there is a registration form and functions to edit data and remove the employee. In addition to a table with data of registered employees.
 
-* 1.1.2 - In the **Gerenciar Alimentos interface**, there is a registration form and functions to edit data and remove food. In addition to a table with registered food data.
+### 1.1 - If you type "2140" in the **Código de Usuário field** and "2305" in the **Senha field** and press the **Acessar button** or the **Enter key**, will appear the **Interface do Gerente** with some functions.
 
-* 1.1.3 - In the **Emitir Relatório Interface**, there is a table with two statistics. In addition to two JComboBoxes to the departure date and end date. When a valid period has been selected, simply click the Issue button for the data to appear.
+![login image](https://github.com/kauassilva/CapyLunch/blob/main/CapyLunch/src/assets/readme/interfaceGerente.png)
 
-* 1.2 - If you type "1234" in the **Código de Usuário field** and "5678" in the **Senha field** and press the **Acessar button** or the **Enter key**, will appear the **Interface do Atendente** with two buttons that do the same thing.
 
-* 1.2.1 - After clicking on one of the buttons, independently, the **Menu interface** will appear, with some JCheckBoxes and their JSpinners to make the order.
+### 1.1.1 - In the **Gerenciar Funcionários interface**, there is a registration form and functions to edit data and remove the employee. In addition to a table with data of registered employees.
 
-* 1.2.2 - In the **Pedido interface**, Random methods were used so that the order number is always different. plus there is a process of adding and multiplying to correctly calculate the order price.
+![login image](https://github.com/kauassilva/CapyLunch/blob/main/CapyLunch/src/assets/readme/interfaceGerenciarFuncionario.png)
 
-* 1.2.3 - After completing the order, the **Pagamento interface** will appear, with two payment options: cash or card.
+
+### 1.1.2 - In the **Gerenciar Alimentos interface**, there is a registration form and functions to edit data and remove food. In addition to a table with registered food data.
+
+![login image](https://github.com/kauassilva/CapyLunch/blob/main/CapyLunch/src/assets/readme/interfaceGerenciarAlimento.png)
+
+
+### 1.1.3 - In the **Emitir Relatório Interface**, there is a table with two statistics. In addition to two JComboBoxes to the departure date and end date. When a valid period has been selected, simply click the Issue button for the data to appear.
+
+![login image](https://github.com/kauassilva/CapyLunch/blob/main/CapyLunch/src/assets/readme/interfaceEmitirRelatorio.png)
+
+
+### 1.2 - If you type "1234" in the **Código de Usuário field** and "5678" in the **Senha field** and press the **Acessar button** or the **Enter key**, will appear the **Interface do Atendente** with two buttons that do the same thing.
+
+![login image](https://github.com/kauassilva/CapyLunch/blob/main/CapyLunch/src/assets/readme/interfaceAtendente.png)
+
+
+### 1.2.1 - After clicking on one of the buttons, independently, the **Menu interface** will appear, with some JCheckBoxes and their JSpinners to make the order.
+
+![login image](https://github.com/kauassilva/CapyLunch/blob/main/CapyLunch/src/assets/readme/interfaceMenuPedido.png)
+
+
+### 1.2.2 - In the **Pedido interface**, Random methods were used so that the order number is always different. plus there is a process of adding and multiplying to correctly calculate the order price.
+
+![login image](https://github.com/kauassilva/CapyLunch/blob/main/CapyLunch/src/assets/readme/interfacePedido.png)
+
+
+### 1.2.3 - After completing the order, the **Pagamento interface** will appear, with two payment options: cash or card.
+
+![login image](https://github.com/kauassilva/CapyLunch/blob/main/CapyLunch/src/assets/readme/interfacePagamento.png)
+
