@@ -90,3 +90,16 @@ We use JOptionPane to make error alerts when some information is wrong, such as 
 
 ![pagamento image](https://github.com/kauassilva/CapyLunch/blob/main/CapyLunch/src/assets/readme/interfacePagamento.png)
 
+
+
+## 👨‍💻 Authors 👩‍💻
+
+* Kauã dos Santos Silva
+  - LinkedIn: https://www.linkedin.com/in/kaua-santos/
+  - GitHub: https://github.com/kauassilva
+  
+* Pedro Henrique Martins Kinoshita
+
+* Maria Clara Moura Maciel
+
+* Sofia Manuela Maggiuzzo Furlanetto
