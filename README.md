@@ -99,6 +99,8 @@ We use JOptionPane to make error alerts when some information is wrong, such as 
   - GitHub: https://github.com/kauassilva
   
 * Pedro Henrique Martins Kinoshita
+  - LinkedIn: https://www.linkedin.com/in/pedro-kinoshita
+  - GitHub: https://github.com/PedroKino
 
 * Maria Clara Moura Maciel
 
