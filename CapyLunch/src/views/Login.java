@@ -130,7 +130,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Login de Usuário");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/logotipo.png")));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/logotipo/logotipo.png")));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

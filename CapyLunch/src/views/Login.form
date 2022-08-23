@@ -184,7 +184,7 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/assets/logotipo.png&quot;))" type="code"/>
+              <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/assets/logotipo/logotipo.png&quot;))" type="code"/>
             </Property>
           </Properties>
         </Component>
