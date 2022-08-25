@@ -107,3 +107,5 @@ We use JOptionPane to make error alerts when some information is wrong, such as 
   - GitHub: https://github.com/MariaClara23
 
 * Sofia Manuela Maggiuzzo Furlanetto
+  - LinkedIn: https://www.linkedin.com/in/sofia-manuela-maggiuzzo-furlanetto-a081b6237/
+  - GitHub: https://github.com/Sofiammf010
